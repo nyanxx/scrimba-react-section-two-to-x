@@ -2,7 +2,7 @@ export default function Header() {
   return (
     <header>
       <img src="./src/assets/Globe.svg" alt="Globe Image" />
-      <span>my travel journal.</span>
+      <h1>my travel journal.</h1>
     </header>
   );
 }
