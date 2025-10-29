@@ -6,7 +6,6 @@ export default function App() {
     <main className="app">
       <Header />
       <MainContent />
-      {/* <Footer /> */}
     </main>
   );
 }
