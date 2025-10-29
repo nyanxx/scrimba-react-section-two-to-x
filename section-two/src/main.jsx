@@ -1,8 +1,9 @@
-import {createRoot} from "react-dom/client"
-import './index.css'
+import { createRoot } from "react-dom/client";
+import App from "./App";
+import "./index.css";
 /**
  * Challenge: Travel Journal - Header
- * 
+ *
  * - Create an App component in a separate file.
  *   Import it here and render it
  * - Create a "components" folder and a Header component.
@@ -11,5 +12,5 @@ import './index.css'
  *   for our page.
  */
 
-const root = createRoot(document.getElementById("root"))
-root.render(/* Render App component here*/)
+const root = createRoot(document.getElementById("root"));
+root.render(<App />);
