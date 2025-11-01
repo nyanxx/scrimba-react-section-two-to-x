@@ -20,8 +20,9 @@ import Joke from "./Joke";
 
 export default function App() {
   return (
-    <>
-      <h1>Jokes</h1>
+    <main>
+      <h1>🤣 Jokes</h1>
+      <hr className="hr-line" />
       {/* only punchline */}
       <Joke
         punchline="It’s hard to explain puns to kleptomaniacs because they always take things literally."
@@ -39,6 +40,6 @@ export default function App() {
         setup="What's the best thing about Switzerland?"
         punchline="I don't know, but the flag is a big plus!"
       />
-    </>
+    </main>
   );
 }
