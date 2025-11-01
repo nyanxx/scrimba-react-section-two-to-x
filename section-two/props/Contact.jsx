@@ -1,15 +1,15 @@
-export default function Contact() {
+export default function Contact(img, imgAlt, name, phoneNo, email) {
   return (
     <article className="contact-card">
-      <img src="./images/mr-whiskerson.png" alt="Photo of Mr. Whiskerson" />
-      <h3>Mr. Whiskerson</h3>
+      <img src={img} alt={imgAlt} />
+      <h3>{name}</h3>
       <div className="info-group">
         <img src="./images/phone-icon.png" alt="phone icon" />
-        <p>(212) 555-1234</p>
+        <p>{phoneNo}</p>
       </div>
       <div className="info-group">
         <img src="./images/mail-icon.png" alt="mail icon" />
-        <p>mr.whiskaz@catnap.meow</p>
+        <p>{email}</p>
       </div>
     </article>
   );
