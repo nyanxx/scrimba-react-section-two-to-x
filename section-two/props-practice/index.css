@@ -6,4 +6,19 @@ body {
     margin: 0;
     font-family: 'Inter', sans-serif;
     background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.joke {
+    border: solid 1px red;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 4px 4px 8px rgba(64, 64, 64, 0.43);
+}
+.joke > p {
+    line-height: 0.5;
 }
