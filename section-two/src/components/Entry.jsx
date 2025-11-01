@@ -20,8 +20,10 @@ export default function Entry() {
   return (
     <section className="entry">
       <img
-        src="https://picsum.photos/seed/picsum/125/168"
-        alt="Some Mountain"
+        // src="https://picsum.photos/seed/picsum/125/168"
+        // alt="Some Mountain"
+        src="https://scrimba.com/links/travel-journal-japan-image-url"
+        alt="mount fuji"
       />
       <article>
         <div>
