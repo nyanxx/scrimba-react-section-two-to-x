@@ -1,12 +1,9 @@
 /**
- * Challenge: Fix the code below to use the `props`
- * object values in place of the hardcoded values below
- *
- * Note: There will be a small bug in the code, so do your
- * best to squash it! 🐛
+ * Destructuring props challenge: fix the bug, now that we've
+ * destructured the props object
  */
 
-export default function Contact(props) {
+export default function Contact({ img, name, phone, email }) {
   return (
     <article className="contact-card">
       <img src={props.img} alt={props.imgAlt} />
