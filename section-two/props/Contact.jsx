@@ -1,15 +1,23 @@
-export default function Contact(img, imgAlt, name, phoneNo, email) {
+/**
+ * Challenge: Fix the code below to use the `props`
+ * object values in place of the hardcoded values below
+ *
+ * Note: There will be a small bug in the code, so do your
+ * best to squash it! 🐛
+ */
+
+export default function Contact(props) {
   return (
     <article className="contact-card">
-      <img src={img} alt={imgAlt} />
-      <h3>{name}</h3>
+      <img src={props.img} alt={props.imgAlt} />
+      <h3>{props.name}</h3>
       <div className="info-group">
         <img src="./images/phone-icon.png" alt="phone icon" />
-        <p>{phoneNo}</p>
+        <p>{props.phoneNo}</p>
       </div>
       <div className="info-group">
         <img src="./images/mail-icon.png" alt="mail icon" />
-        <p>{email}</p>
+        <p>{props.email}</p>
       </div>
     </article>
   );
