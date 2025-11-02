@@ -17,9 +17,10 @@ export default function App() {
       <hr className="hr-line" />
       {/* only punchline */}
       <Joke
-        punchline="It’s hard to explain puns to kleptomaniacs because they always take things literally."
+        punchline="It's hard to explain puns to kleptomaniacs because they always take things literally."
         upvotes={1}
         downvotes={4}
+        // You can even pass the array of object having comments, author and timestamp.
         comments={["It's funny", "Am i the only one who didn't get this!"]}
         isPun={true}
       />
@@ -35,10 +36,10 @@ export default function App() {
       <Joke
         setup="How did the hacker escape the police?"
         punchline="He just ransomware!"
-        upvotes="9"
-        downvotes="2"
+        upvotes={9}
+        downvotes={2}
         comments={["Ran some where hahaha", "Nice one"]}
-        isPun="true"
+        isPun={true}
       />
       <Joke
         setup="What's the best thing about Switzerland?"
@@ -46,7 +47,7 @@ export default function App() {
         upvotes={5}
         downvotes={1}
         comments={["I see what you did there!", "nice", "noice👍"]}
-        isPun={true}
+        isPun={false}
       />
     </main>
   );

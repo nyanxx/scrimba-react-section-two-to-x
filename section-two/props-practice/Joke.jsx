@@ -10,8 +10,10 @@ export default function Joke(props) {
         <span className="downvotes">{props.downvotes}👎</span>
       </div>
       <section className="comment-section">
-        {props.comments.map((indiComment) => (
-          <span className="individual-comment">{indiComment}</span>
+        {props.comments.map((indiComment, index) => (
+          <span key={index} className="individual-comment">
+            {indiComment}
+          </span>
         ))}
       </section>
     </article>
