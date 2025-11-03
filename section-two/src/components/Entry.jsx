@@ -5,8 +5,14 @@ export default function Entry(props) {
       <article>
         <div>
           <img src="./src/assets/location.svg" alt="Location marker" />
-          <span>{props.country}</span>
-          <a href={props.googleMapsLink}>View on Google Maps</a>
+          <span className="country-name">{props.country}</span>
+          <a
+            className="google-map-link"
+            href={props.googleMapsLink}
+            target="_blank"
+          >
+            View on Google Maps
+          </a>
         </div>
         <h2>{props.title}</h2>
         <span>{props.dates}</span>

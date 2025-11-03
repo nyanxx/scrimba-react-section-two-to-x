@@ -4,7 +4,6 @@ body {
   font-family: Inter, "Arial Narrow Bold", sans-serif;
   display: flex;
   justify-content: center;
-  align-items: center;
   height: 100vh;
   background-color: #2b283a;
   box-sizing: border-box;
@@ -14,6 +13,7 @@ body {
   width: 550px;
   height: 704px;
   background-color: white;
+  margin-top: 20px;
 }
 
 header {
@@ -64,13 +64,19 @@ header > h1 {
   margin-right: 4px;
 }
 
-.entry > article > div > span {
+.country-name {
   margin-right: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
 }
 
-.entry > article > div > a {
-  color: #918e9b;
+.google-map-link {
+  color: #2b283a;
   text-decoration: underline;
+}
+
+.google-map-link:visited {
+  color: #918e9b;
 }
 
 .entry > article > h2 {
