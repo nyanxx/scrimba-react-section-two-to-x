@@ -15,10 +15,7 @@ export default function App() {
   const entryComponent = data.map((entry) => (
     <Entry
       key={entry.id}
-      img={{
-        src: entry.img.src,
-        alt: entry.img.alt,
-      }}
+      img={entry.img}
       title={entry.title}
       country={entry.country}
       googleMapsLink={entry.googleMapsLink}
