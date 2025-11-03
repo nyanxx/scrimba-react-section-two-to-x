@@ -1,5 +1,5 @@
 import Joke from "./Joke";
-import jokesData from "./jokesData";
+import jokesData from "./jokesData.js";
 
 export default function App() {
   /**
@@ -8,10 +8,26 @@ export default function App() {
    * the jokes show up on the page again
    */
 
-  const jokeElements = jokesData.map((joke) => {
-    return <Joke />;
+  const jokeElements = jokesData.map((joke, index) => {
+    return (
+      <Joke
+        key={index}
+        setup={joke.setup}
+        punchline={joke.punchline}
+        upvotes={joke.upvotes}
+        downvotes={joke.downvotes}
+        comments={joke.comments}
+        isPun={joke.isPun}
+      />
+    );
   });
-  return <main></main>;
+  return (
+    <main>
+      <h1>🤣 Jokes</h1>
+      <hr className="hr-line" />
+      {jokeElements}
+    </main>
+  );
 }
 
 // export default function App() {
