@@ -1,3 +1,7 @@
+/**
+ * Travel Journal: Pass object as props challenge: Fix our component! 😱
+ */
+
 export default function Entry(props) {
   return (
     <section className="entry">
