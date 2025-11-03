@@ -6,14 +6,13 @@ export default function App() {
    * JSX elements by surrounding each ninja turtle with an <h2> element
    */
 
-  const ninjaTurtles = ["Donatello", "Michaelangelo", "Rafael", "Leonardo"];
-  return (
-    <main>
-      {ninjaTurtles.map((turtle, index) => (
-        <h2 key={index}>{turtle}</h2>
-      ))}
-    </main>
-  );
+  const ninjaTurtles = [
+    <h2>Donatello</h2>,
+    <h2>Michaelangelo</h2>,
+    <h2>Rafael</h2>,
+    <h2>Leonardo</h2>,
+  ];
+  return <main>{ninjaTurtles}</main>;
 }
 
 // export default function App() {
