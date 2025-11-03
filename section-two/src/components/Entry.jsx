@@ -3,25 +3,25 @@
  */
 
 export default function Entry(props) {
-  console.log(props);
+  // console.log(props);
   return (
     <section className="entry">
-      <img src={props.entry.img.src} alt={props.entry.img.alt} />
+      <img src={props.img.src} alt={props.img.alt} />
       <article>
         <div>
           <img src="./src/assets/location.svg" alt="Location marker" />
-          <span className="country-name">{props.entry.country}</span>
+          <span className="country-name">{props.country}</span>
           <a
             className="google-map-link"
-            href={props.entry.googleMapsLink}
+            href={props.googleMapsLink}
             target="_blank"
           >
             View on Google Maps
           </a>
         </div>
-        <h2>{props.entry.title}</h2>
-        <span>{props.entry.dates}</span>
-        <p>{props.entry.text}</p>
+        <h2>{props.title}</h2>
+        <span>{props.dates}</span>
+        <p>{props.text}</p>
       </article>
     </section>
   );

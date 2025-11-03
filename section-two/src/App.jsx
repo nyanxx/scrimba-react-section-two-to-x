@@ -6,8 +6,8 @@ export default function App() {
   const entryComponent = data.map((entry) => (
     <Entry
       key={entry.id}
-      // Travel Journal: Passing object as props challenge
-      entry={entry}
+      // Travel Journal: Spread object as props
+      {...entry}
     />
   ));
 
