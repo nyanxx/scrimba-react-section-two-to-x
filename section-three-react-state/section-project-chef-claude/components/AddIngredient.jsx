@@ -11,8 +11,9 @@ export default function AddIngredient() {
    * simply console.log("Form submitted!") for now
    */
 
-  function handleSubmit() {
-    console.log("Form submitted!")
+  function handleSubmit(event) {
+    event.preventDefault();
+    console.log("Form submitted!");
   }
 
   return (
@@ -20,7 +21,7 @@ export default function AddIngredient() {
       <form className="add-ingredient" onSubmit={handleSubmit}>
         <input
           id="input-ingredient"
-          name="input-ingredient"
+          name="ingredient"
           aria-label="Enter ingredient"
           type="text"
           className="input-ingredient"
@@ -29,7 +30,7 @@ export default function AddIngredient() {
         <button
           id="btn-add-ingredient"
           aria-label="Add ingredient"
-          name="btn-add-ingredient"
+          name="add-ingredient"
           className="btn-add-ingredient"
         >
           Add ingredient
