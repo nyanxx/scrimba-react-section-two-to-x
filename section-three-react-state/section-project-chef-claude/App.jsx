@@ -3,8 +3,20 @@
  * and render it here in the App component
  */
 
+import Header from "./components/Header";
+import AddIngredient from "./components/AddIngredient";
+import IngredientOnHands from "./components/IngredientOnHands";
+import GetRecipe from "./components/GetRecipe";
+import ShowRecipe from "./components/ShowRecipe";
+
 export default function App() {
   return (
-      <h1>Hello world!</h1>
-  )
+    <main>
+      <Header />
+      <AddIngredient />
+      <IngredientOnHands />
+      <GetRecipe />
+      <ShowRecipe />
+    </main>
+  );
 }

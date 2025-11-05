@@ -1,13 +1,141 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    font-family: Inter, sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: Inter, sans-serif;
 }
 
-/**
-header box shadow code:
-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.10), 0px 1px 2px 0px rgba(0, 0, 0, 0.06);
-*/
+.header {
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1),
+    0px 1px 2px 0px rgba(0, 0, 0, 0.06);
+  height: 111px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header .site-heading {
+  font-size: 32px;
+  font-weight: normal;
+  letter-spacing: -0.1px;
+  color: #141413;
+}
+
+.header .site-logo {
+  width: 42px;
+  height: 53px;
+  margin-right: 11px;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  padding-left: 63px;
+  padding-right: 63px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.add-ingredient {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 67px 63px 48px;
+}
+
+.add-ingredient .input-ingredient {
+  width: 399px;
+  height: 38px;
+  padding: 13px;
+  border: #d1d5db solid 1px;
+  border-radius: 6px;
+}
+
+/* Is this even required! #verify */
+.add-ingredient .input-ingredient::placeholder {
+  color: #6b7280;
+}
+
+.add-ingredient .btn-add-ingredient {
+  min-width: 183px;
+  height: 38px;
+  border-radius: 6px;
+  background-color: #141413;
+  color: #fafaf8;
+  border: none;
+  padding: 9px 17px;
+}
+
+.ingredient-on-hands {
+  flex-direction: column;
+  margin-bottom: 48px;
+}
+
+.ingredient-on-hands > h2 {
+  font-weight: 600;
+  margin-bottom: 24px;
+  margin-top: 0;
+}
+
+.ingredient-on-hands > ul {
+  margin: 0;
+  font: 18px;
+  line-height: 28px;
+  color: #475467;
+}
+
+.get-recipe {
+  background-color: #f0efeb;
+  border-radius: 8px;
+  padding: 28px 42px;
+}
+.get-recipe > div > h3 {
+  font-weight: 500;
+  margin: 0;
+}
+
+.get-recipe > div > p {
+  margin-top: 8px;
+  margin-bottom: 0;
+  color: #6b7280;
+  margin-right: 56px;
+}
+
+.get-recipe > button {
+  border-radius: 8px;
+  background-color: #d17557;
+  color: #fafaf8;
+  height: 38px;
+  width: 115px;
+  border: none;
+  align-self: center;
+}
+
+.show-recipe {
+  flex-direction: column;
+}
+
+.show-recipe > h2 {
+  font-weight: 600;
+  margin-top: 60px;
+}
+
+.show-recipe .bold-text {
+  font-weight: bold;
+}
+
+.show-recipe p,
+li,
+ol {
+  color: #475467;
+  /* margin:; */
+}
+
+.show-recipe li {
+  margin-bottom: 10px;
+}
