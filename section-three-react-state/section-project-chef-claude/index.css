@@ -6,21 +6,23 @@ body {
   margin: 0;
   padding: 0;
   font-family: Inter, sans-serif;
+  background-color: #fafaf8;
 }
 
 .header {
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1),
     0px 1px 2px 0px rgba(0, 0, 0, 0.06);
-  height: 111px;
+  height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: white;
 }
 
 .header .site-heading {
   font-size: 32px;
-  font-weight: normal;
-  letter-spacing: -0.1px;
+  font-weight: 400;
+  letter-spacing: -0.7px;
   color: #141413;
 }
 
@@ -46,14 +48,18 @@ section {
   align-items: center;
   gap: 12px;
   padding: 67px 63px 48px;
+  max-width: 720px;
+  margin: 0 auto;
 }
 
 .add-ingredient .input-ingredient {
-  width: 399px;
+  min-width: 200px;
+  max-width: 399px;
   height: 38px;
-  padding: 13px;
+  padding: 9px 13px;
   border: #d1d5db solid 1px;
   border-radius: 6px;
+  flex-grow: 1;
 }
 
 /* Is this even required! #verify */
@@ -69,6 +75,14 @@ section {
   color: #fafaf8;
   border: none;
   padding: 9px 17px;
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.add-ingredient .btn-add-ingredient::before {
+  content: "+";
+  margin-right: 5px;
 }
 
 .ingredient-on-hands {
@@ -114,6 +128,7 @@ section {
   width: 115px;
   border: none;
   align-self: center;
+  font-family: Inter, sans-serif;
 }
 
 .show-recipe {

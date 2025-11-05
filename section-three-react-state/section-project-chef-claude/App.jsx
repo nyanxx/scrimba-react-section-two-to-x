@@ -4,19 +4,21 @@
  */
 
 import Header from "./components/Header";
-import AddIngredient from "./components/AddIngredient";
+import Main from "./components/Main";
+// import AddIngredient from "./components/AddIngredient";
 import IngredientOnHands from "./components/IngredientOnHands";
 import GetRecipe from "./components/GetRecipe";
 import ShowRecipe from "./components/ShowRecipe";
 
 export default function App() {
   return (
-    <main>
+    <>
       <Header />
-      <AddIngredient />
+      <Main />
+      {/* <AddIngredient /> */}
       <IngredientOnHands />
       <GetRecipe />
       <ShowRecipe />
-    </main>
+    </>
   );
 }

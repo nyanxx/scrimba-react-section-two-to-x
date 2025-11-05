@@ -1,21 +1,23 @@
 export default function AddIngredient() {
   return (
-    <section className="add-ingredient">
+    <form className="add-ingredient">
       <input
         id="input-ingredient"
         name="input-ingredient"
+        aria-label="Enter ingredient"
         type="text"
         className="input-ingredient"
         placeholder="e.g. oregano"
       />
-      <input
+      <button
         id="btn-add-ingredient"
+        aria-label="Add ingredient"
         name="btn-add-ingredient"
         className="btn-add-ingredient"
-        type="button"
-        value="+ Add ingredient"
-      />
+      >
+        Add ingredient
+      </button>
       {/* <button className="btn-add-ingredient">+ Add Ingredient</button> */}
-    </section>
+    </form>
   );
 }
