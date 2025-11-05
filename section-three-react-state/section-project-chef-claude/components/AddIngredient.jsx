@@ -1,6 +1,10 @@
 export default function AddIngredient() {
   const ingredients = ["Chicken", "Oregano", "Tomatoes"];
 
+  const listIngredients = ingredients.map((ingredient) => (
+    <li key={ingredient}>{ingredient}</li>
+  ));
+
   /**
    * Chef Claude: Map ingredients list Review Challenge:
    * Map over the list of ingredients and render them as list items
@@ -28,7 +32,7 @@ export default function AddIngredient() {
           Add ingredient
         </button>
       </form>
-      <ul></ul>
+      <ul>{listIngredients}</ul>
     </>
   );
 }
