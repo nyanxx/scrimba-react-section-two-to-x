@@ -7,7 +7,8 @@ function App() {
   }
   
   /**
-   * Challenge: add our new function to the button
+   * Challenge: Log something to the console when the mouse
+   * hovers over the image
    */
   
   return (
