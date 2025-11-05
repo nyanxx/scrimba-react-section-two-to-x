@@ -6,14 +6,18 @@ export default function AddIngredient() {
   ));
 
   /**
-   * Challenge:
+   * Chef Claude: Map ingredients list Challenge 2:
    * Add an `onSubmit` event listener on the form. Have the function
    * simply console.log("Form submitted!") for now
    */
-  
+
+  function handleSubmit() {
+    console.log("Form submitted!")
+  }
+
   return (
     <>
-      <form className="add-ingredient">
+      <form className="add-ingredient" onSubmit={handleSubmit}>
         <input
           id="input-ingredient"
           name="input-ingredient"
