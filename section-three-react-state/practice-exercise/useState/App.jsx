@@ -2,16 +2,17 @@ import React from "react";
 
 export default function App() {
   let [isImportant, setIsImportant] = React.useState("Yes");
-  /**
-   * Array destructuring and changing state challenge:
-   * 1. Create a function called `handleClick` that runs
-   *    setIsImportant("Definitely")
-   * 2. Add a click event listener to the button
-   *    that runs `handleClick` when the button is clicked.
-   */
 
   function handleClick() {
-    setIsImportant("Definitely");
+    setIsImportant((default_value, what, what2) => {
+      console.log(default_value); // yes
+      default_value = "yooo"; // doesnt update the DOM value
+      console.log(default_value); // yooo
+      console.log(what); // undefined
+      console.log(what2); // undefined
+      const now = Date.now();
+      return now; // this thing will render on the DOM
+    });
   }
 
   return (
