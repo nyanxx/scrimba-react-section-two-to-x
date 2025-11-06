@@ -14,31 +14,25 @@ export default function App() {
    * See if you can think of a way to add 1 to the count
    * every time the + button is clicked
    *
+   * useState - State Practice Challenge 4:
+   * Add functionality to the minus button
    */
 
   const [count, setCount] = React.useState(0);
 
   function add() {
     setCount(count + 1);
-    // using ++ or -- is a bin no no in React!
   }
 
-  function handleClickSub() {
-    setCount(() => {
-      count--;
-      return count;
-    });
+  function sub() {
+    setCount(count - 1);
   }
 
   return (
     <main className="container">
       <h1>How many times will Bob say "state" in this section?</h1>
       <div className="counter">
-        <button
-          onClick={handleClickSub}
-          className="minus"
-          aria-label="Decrease count"
-        >
+        <button onClick={sub} className="minus" aria-label="Decrease count">
           -
         </button>
         <h2 className="count">{count}</h2>
