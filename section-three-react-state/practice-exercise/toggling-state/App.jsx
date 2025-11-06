@@ -1,16 +1,26 @@
+import React from "react";
 export default function App() {
   /**
    * Toggling State Challenge:
    * - Initialize state for `isGoingOut` as a boolean
-   * - Make it so clicking the button flips that
-   *   boolean value (true -> false, false -> true)
+   * - Make it so clicking the button flips that boolean value (true -> false, false -> true)
    * - Display "Yes" if `isGoingOut` is `true`, "No" otherwise
    */
+
+  const [state, setState] = React.useState(true);
+
+  function handleClick() {
+    setState((prevState) => {
+      return !prevState;
+    });
+  }
 
   return (
     <main>
       <h1 className="title">Do I feel like going out tonight?</h1>
-      <button className="value">Yes</button>
+      <button onClick={handleClick} className="value">
+        {state ? "Yes" : "No"}
+      </button>
     </main>
   );
 }
