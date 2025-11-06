@@ -1,18 +1,19 @@
 import React from "react";
 
 export default function App() {
+  let [isImportant, setIsImportant] = React.useState("Yes");
   /**
-   * useState Challenge: Replace our hard-coded "Yes" on the page with
-   * some state initiated with React.useState()
+   * Array destructuring and changing state challenge:
+   * 1. Create a function called `handleClick` that runs
+   *    setIsImportant("Definitely")
+   * 2. Add a click event listener to the button
+   *    that runs `handleClick` when the button is clicked.
    */
-
-  const result = React.useState("Yes");
-  console.log(result);
 
   return (
     <main>
       <h1 className="title">Is state important to know?</h1>
-      <button className="value">{result[0]}</button>
+      <button className="value">{isImportant}</button>
     </main>
   );
 }
