@@ -25,14 +25,29 @@ export default function App() {
    *
    * `true` => starFilled
    * `false` => starEmpty
-   * 
+   *
    */
 
-  //  let starIcon = contact.isFavorite
+  /**
+   * Challenge:
+   * Update the following:
+   * - aria-pressed should reflect the same value as contact.isFavorite.
+   * - aria-label should switch to say "Remove from favorites" if
+   *   contact.isFavorite is `true`.
+   * - img alt should say "filled star icon" when it is filled.
+   */
+
+  const starValue = contact.isFavorite ? starFilled : starEmpty;
+  const starImgAlt = contact.isFavorite
+    ? "filled star icon"
+    : "empty star icon";
+  const starAriaLabel = contact.isFavorite
+    ? "Remove from favorites"
+    : "Add to favorites";
+
   function toggleFavorite(event) {
     setContact((prevObj) => {
       prevObj.isFavorite = !prevObj.isFavorite;
-      event.target.src = prevObj.isFavorite ? starFilled : starEmpty;
       return prevObj;
     });
   }
@@ -48,10 +63,11 @@ export default function App() {
         <div className="info">
           <button
             onClick={toggleFavorite}
-            aria-pressed={false}
+            aria-pressed={contact.isFavorite}
+            aria-label={starAriaLabel}
             className="favorite-button"
           >
-            <img src={starEmpty} alt="empty star icon" className="favorite" />
+            <img src={starValue} alt={starImgAlt} className="favorite" />
           </button>
           <h2 className="name">
             {contact.firstName} {contact.lastName}
