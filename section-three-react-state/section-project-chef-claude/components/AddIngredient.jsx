@@ -1,26 +1,27 @@
+import { useState } from "react";
+
 export default function AddIngredient() {
-  const ingredients = ["Chicken", "Oregano", "Tomatoes"];
+  const [ingredients, setIngredients] = useState([]);
 
   const listIngredients = ingredients.map((ingredient) => (
     <li key={ingredient}>{ingredient}</li>
   ));
 
-    /**
-     * Chef Claude: Map ingredients list Challenge 3:
-     * Add the new ingredient to the array of ingredients. Also, add a 
-     * console.log(ingredients) after adding the ingredient, because 
-     * **warning**: you aren't going to see the page update!
-     * 
-     * Hint: this is a one-liner solution, so don't overthink it 😅
-     */
+  /**
+   * Chef Claude: Refactor array state challenge: Update our app so that when the user enters a
+   * new ingredient and submits the form, it adds that new
+   * ingredient to our list!
+   */
 
   function handleSubmit(event) {
+    /**
+     * Like before, don't worry about this FormData stuff yet.
+     * Just use the newIngredient below to help you finish the
+     * challenge.
+     */
     event.preventDefault();
-    const formData = new FormData(event.currentTarget);
-    const newIngredient = formData.get("ingredient");
-    // console.log(newIngredient);
-    ingredients.push(newIngredient)
-    console.log(ingredients)
+    const formData = new FormData(event.target);
+    setIngredients((prevData) => [...prevData, formData.get("ingredient")]);
   }
 
   return (
