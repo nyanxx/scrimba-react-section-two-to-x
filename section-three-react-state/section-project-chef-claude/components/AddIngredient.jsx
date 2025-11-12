@@ -8,17 +8,11 @@ export default function AddIngredient() {
   ));
 
   /**
-   * Chef Claude: Refactor array state challenge: Update our app so that when the user enters a
-   * new ingredient and submits the form, it adds that new
-   * ingredient to our list!
+   * Chef Claude: Refactor form submission challenge: use form action instead of onSubmit to
+   * handle the data from the form
    */
 
   function handleSubmit(event) {
-    /**
-     * Like before, don't worry about this FormData stuff yet.
-     * Just use the newIngredient below to help you finish the
-     * challenge.
-     */
     event.preventDefault();
     const formData = new FormData(event.target);
     setIngredients((prevData) => [...prevData, formData.get("ingredient")]);
