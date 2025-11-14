@@ -3,14 +3,17 @@ import ReactDOM from "react-dom/client";
 
 function App() {
   /**
-   * Form Actions Challenge: get the password from the form too and log
-   * it to the console to be sure it came in correctly.
+   * Forms radio challenge: grab the employment status from the form and log it
+   * to the console. (Remember to select one of the radios before submitting)
+   *
+   * Note: This won't work the way you might expect quite yet!
    */
 
   function signUp(formData) {
     const email = formData.get("email");
     const password = formData.get("password");
-    console.log(email, password);
+    const employmentStatus = formData.get("employmentStatus");
+    console.log(employmentStatus);
   }
 
   return (
@@ -20,15 +23,47 @@ function App() {
         <label htmlFor="email">Email:</label>
         <input
           id="email"
+          defaultValue="joe@schmoe.com"
           type="email"
           name="email"
           placeholder="joe@schmoe.com"
         />
-        <br />
 
         <label htmlFor="password">Password:</label>
-        <input id="password" type="password" name="password" />
-        <br />
+        <input
+          id="password"
+          defaultValue="password123"
+          type="password"
+          name="password"
+        />
+
+        <label htmlFor="description">Description:</label>
+        <textarea
+          id="description"
+          name="description"
+          defaultValue="This is a description"
+        ></textarea>
+
+        <fieldset>
+          <legend>Employment Status:</legend>
+          <label>
+            <input type="radio" name="employmentStatus" value="Unemployed" />
+            Unemployed
+          </label>
+          <label>
+            <input type="radio" name="employmentStatus" value="Part-time" />
+            Part-time
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="employmentStatus"
+              value="Full-time"
+              defaultChecked={true}
+            />
+            Full-time
+          </label>
+        </fieldset>
 
         <button>Submit</button>
       </form>
