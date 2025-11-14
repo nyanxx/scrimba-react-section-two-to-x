@@ -1,25 +1,27 @@
 import React from "react";
 
 export default function App() {
-  const [unreadMessages, setUnreadMessages] = React.useState([]);
+  const [unreadMessages, setUnreadMessages] = React.useState(["", "", ""]);
 
   /**
-   * Conditional rendering practice: && Challenge:
-   * Only display the <h1> below if there are unread messages
+   * Conditional rendering practice: ternary challenge:
+   * - If there are no unread messages, display "You're all caught up!"
+   * - If there's exactly 1 unread message, it should read "You have
+   *   1 unread message (singular)"
+   * - If there are > 1 unread messages, display "You have <n> unread
+   *   messages" (plural)
    */
 
-  /**
-   * Conditional rendering practice: && Challenge:
-   * If there are 0 unread messages, display a paragraph that says "You
-   * have no unread messages". (So, the logic will be the opposite of
-   * what we have for the h1)
-   */
   return (
     <div>
-      {unreadMessages.length > 0 && (
-        <h1>You have {unreadMessages.length} unread messages!</h1>
-      )}
-      {unreadMessages === 0 && <p>You have no unread messages</p>}
+      {unreadMessages.length === 0 ? <h1>You're all caught up!</h1> : null}
+
+      {unreadMessages.length > 0 ? (
+        <h1>
+          You have unread {unreadMessages.length}{" "}
+          {unreadMessages.length === 1 ? "message" : "messages"}
+        </h1>
+      ) : null}
     </div>
   );
 }
