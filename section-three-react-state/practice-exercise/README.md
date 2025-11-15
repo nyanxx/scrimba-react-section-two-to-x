@@ -5,3 +5,5 @@
 5. toggling-state
 6. complex-state-arrays
 7. complex-state-objects
+8. react-forms
+9. conditional-rendering
