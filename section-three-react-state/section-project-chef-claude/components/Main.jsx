@@ -16,9 +16,10 @@ export default function Main() {
   }
 
   /**
-   * Chef Claude: conditional rendering challenge 1:
-   * Using conditional rendering, only render the new <section> (ingredient-on-hands) IF
-   * there are ingredients added to the list of ingredients.
+   * Chef Claude: conditional rendering challenge 2:
+   * Only display the "get-recipe" section if the ingredients list
+   * has more than 3 items in it. (Fewer than that and it might not
+   * give great results from the chef 🤖👩‍🍳)
    */
 
   return (
@@ -42,19 +43,19 @@ export default function Main() {
         </button>
       </form>
       {ingredients.length > 0 && (
-        <>
-          <section className="ingredient-on-hands">
-            <h2>Ingredient on hand:</h2>
-            <ul>{listIngredients}</ul>
-          </section>
-          <section className="get-recipe">
-            <div>
-              <h3>Ready for a recipe?</h3>
-              <p>Generate a recipe from your list of ingredients</p>
-            </div>
-            <button>Get a recipe</button>
-          </section>
-        </>
+        <section className="ingredient-on-hands">
+          <h2>Ingredient on hand:</h2>
+          <ul>{listIngredients}</ul>
+        </section>
+      )}
+      {ingredients.length > 3 && (
+        <section className="get-recipe">
+          <div>
+            <h3>Ready for a recipe?</h3>
+            <p>Generate a recipe from your list of ingredients</p>
+          </div>
+          <button>Get a recipe</button>
+        </section>
       )}
     </main>
   );
