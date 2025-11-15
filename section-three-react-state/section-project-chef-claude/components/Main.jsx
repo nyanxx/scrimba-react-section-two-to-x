@@ -8,10 +8,18 @@ export default function Main() {
   ));
 
   function addIngredient(formData) {
-    setIngredients((prevIngredients) => {
-      return [...prevIngredients, formData.get("ingredient")];
-    });
+    formData.get("ingredient") !== ""
+      ? setIngredients((prevIngredients) => {
+          return [...prevIngredients, formData.get("ingredient")];
+        })
+      : console.log("Add some ingredients");
   }
+
+  /**
+   * Chef Claude: conditional rendering challenge 1:
+   * Using conditional rendering, only render the new <section> (ingredient-on-hands) IF
+   * there are ingredients added to the list of ingredients.
+   */
 
   return (
     <main>
@@ -33,25 +41,21 @@ export default function Main() {
           Add ingredient
         </button>
       </form>
-      <ul>{listIngredients}</ul>
-      <section className="ingredient-on-hands">
-        <h2>Ingredient on hand:</h2>
-        <ul>
-          <li>item x</li>
-          <li>item x</li>
-          <li>item x</li>
-          <li>item x</li>
-          <li>item x</li>
-          <li>item x</li>
-        </ul>
-      </section>
-      <section className="get-recipe">
-        <div>
-          <h3>Ready for a recipe?</h3>
-          <p>Generate a recipe from your list of ingredients</p>
-        </div>
-        <button>Get a recipe</button>
-      </section>
+      {ingredients.length > 0 ? (
+        <>
+          <section className="ingredient-on-hands">
+            <h2>Ingredient on hand:</h2>
+            <ul>{listIngredients}</ul>
+          </section>
+          <section className="get-recipe">
+            <div>
+              <h3>Ready for a recipe?</h3>
+              <p>Generate a recipe from your list of ingredients</p>
+            </div>
+            <button>Get a recipe</button>
+          </section>
+        </>
+      ) : null}
     </main>
   );
 }
