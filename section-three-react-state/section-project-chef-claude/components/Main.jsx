@@ -41,7 +41,7 @@ export default function Main() {
           Add ingredient
         </button>
       </form>
-      {ingredients.length > 0 ? (
+      {ingredients.length > 0 && (
         <>
           <section className="ingredient-on-hands">
             <h2>Ingredient on hand:</h2>
@@ -55,7 +55,7 @@ export default function Main() {
             <button>Get a recipe</button>
           </section>
         </>
-      ) : null}
+      )}
     </main>
   );
 }
