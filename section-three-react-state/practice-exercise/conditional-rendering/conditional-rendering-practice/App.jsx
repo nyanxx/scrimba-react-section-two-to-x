@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function App() {
-  const [unreadMessages, setUnreadMessages] = React.useState(["", "", ""]);
+  const [unreadMessages, setUnreadMessages] = React.useState(["", ""]);
 
   /**
    * Conditional rendering practice: ternary challenge:
@@ -12,16 +12,19 @@ export default function App() {
    *   messages" (plural)
    */
 
+  let text;
+
+  if (unreadMessages.length === 0) {
+    text = "You're all caught up!";
+  } else if (unreadMessages.length === 1) {
+    text = "You have 1 unread message";
+  } else {
+    text = `You have ${unreadMessages.length} unread messages`;
+  }
+
   return (
     <div>
-      {unreadMessages.length === 0 ? <h1>You're all caught up!</h1> : null}
-
-      {unreadMessages.length > 0 ? (
-        <h1>
-          You have unread {unreadMessages.length}{" "}
-          {unreadMessages.length === 1 ? "message" : "messages"}
-        </h1>
-      ) : null}
+      <h1>{text}</h1>
     </div>
   );
 }
