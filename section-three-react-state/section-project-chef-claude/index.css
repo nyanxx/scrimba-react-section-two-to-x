@@ -1,5 +1,8 @@
 * {
   box-sizing: border-box;
+  /* Fixing layout shift caused by scrollbar */
+  scrollbar-gutter: stable;
+  /* scrollbar-width: none; */
 }
 
 body {
@@ -120,7 +123,7 @@ section {
   margin-right: 56px;
 }
 
-.get-recipe > button {
+.get-recipe > .get-recipe-btn {
   border-radius: 8px;
   background-color: #d17557;
   color: #fafaf8;
@@ -129,15 +132,19 @@ section {
   border: none;
   align-self: center;
   font-family: Inter, sans-serif;
+  cursor: pointer;
 }
 
 .show-recipe {
   flex-direction: column;
+  line-height: 28px;
+  font-size: 1.125rem;
+  font-weight: 400;
 }
 
 .show-recipe > h2 {
   font-weight: 600;
-  margin-top: 60px;
+  margin: 60px 0 10px;
 }
 
 .show-recipe .bold-text {
@@ -148,9 +155,8 @@ section {
 li,
 ol {
   color: #475467;
-  /* margin:; */
 }
 
 .show-recipe li {
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
