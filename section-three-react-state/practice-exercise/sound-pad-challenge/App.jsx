@@ -12,7 +12,7 @@ export default function App() {
    *    properties yet)
    */
 
-  const [pads, setPadsArr] = React.useState([padsData]);
+  const [pads, setPadsArr] = React.useState(padsData);
 
   const padsRender = pads.map((pad) => {
     return (
