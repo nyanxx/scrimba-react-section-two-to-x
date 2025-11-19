@@ -4,31 +4,47 @@ import Pad from "./Pad";
 
 export default function App() {
   /**
-   * Sound pads challenge, part 1:
-   * 1. Initialize state with the default value of the
-   *    array pulled in from pads.js
-   * 2. Map over that state array and display each one
-   *    as a <button> (CSS ids already written for you)
-   *    (Don't worry about using the "on" or "color"
-   *    properties yet)
-   */
-
-  /**
-   * Sound pads challenge, part 2:
-   * 1. Create a separate component called "Pad" and
-   *    replace the `button` above with our <Pad /> component
-   * 2. Pass the Pad component a prop called `color` with the
-   *    value of the same name from the `padsData` objects
-   * 3. In the Pad component, apply an inline style to the <button>
-   *    to set the backgroundColor of the button.
+   * Sound pads challenge part 4.2 - shared state:
+   * Create a toggle() function that logs
+   * "clicked!" to the console
    *
-   * (We'll deal with the "on" property soon)
+   * Pass that function down to each of the Pad components
+   * and set it up so when they get clicked, the function runs
    */
+  const [pads, setPads] = React.useState(padsData);
 
-  const [pads, setPadsArr] = React.useState(padsData);
+  function toggle(id) {
+    
+    /**
+     * Sound pads challenge part 4.3 - updating item in array:
+     * Call setPads to update the state of the one pad that was
+     * clicked. Map over the previous pads array, and if the current
+     * item you're iterating over has the same id as the `id` passed
+     * to this function, then return a new object with the `on` value
+     * set to the opposite of what it was before.
+     * Otherwise (if the ids don't match), just return the previous
+     * item as it was, unchanged.
+     */
+
+    setPads((pervState) => {
+      const newPads = pervState.map((pad) => {
+        pad.id === id && (pad.on = !pad.on);
+        return pad;
+      });
+      return newPads;
+    });
+  }
 
   const padsRender = pads.map((pad) => {
-    return <Pad key={pad.id} color={pad.color} padOnStatus={pad.on} />;
+    return (
+      <Pad
+        key={pad.id}
+        id={pad.id}
+        color={pad.color}
+        padOn={pad.on}
+        toggle={toggle}
+      />
+    );
   });
 
   return (
