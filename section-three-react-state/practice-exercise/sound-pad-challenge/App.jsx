@@ -14,7 +14,6 @@ export default function App() {
   const [pads, setPads] = React.useState(padsData);
 
   function toggle(id) {
-    
     /**
      * Sound pads challenge part 4.3 - updating item in array:
      * Call setPads to update the state of the one pad that was
@@ -26,13 +25,11 @@ export default function App() {
      * item as it was, unchanged.
      */
 
-    setPads((pervState) => {
-      const newPads = pervState.map((pad) => {
-        pad.id === id && (pad.on = !pad.on);
-        return pad;
-      });
-      return newPads;
-    });
+    setPads((pervState) =>
+      pervState.map((pad) => {
+        return pad.id === id ? { ...pad, on: !pad.on } : pad;
+      })
+    );
   }
 
   const padsRender = pads.map((pad) => {
