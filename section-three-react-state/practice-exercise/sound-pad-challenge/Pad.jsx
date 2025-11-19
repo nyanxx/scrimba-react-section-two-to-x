@@ -1,3 +1,3 @@
-export default function Pad({ padColor, key }) {
-  return <button key={key} style={{ backgroundColor: padColor }}></button>;
+export default function Pad({ color }) {
+  return <button style={{ backgroundColor: color }}></button>;
 }
