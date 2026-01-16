@@ -1,8 +1,6 @@
 * {
   box-sizing: border-box;
-  /* Fixing layout shift caused by scrollbar */
   scrollbar-gutter: stable;
-  /* scrollbar-width: none; */
 }
 
 body {
@@ -38,7 +36,6 @@ body {
 section {
   display: flex;
   justify-content: center;
-  /* align-items: center; */
   padding-left: 63px;
   padding-right: 63px;
   max-width: 720px;
@@ -65,7 +62,6 @@ section {
   flex-grow: 1;
 }
 
-/* Is this even required! #verify */
 .add-ingredient .input-ingredient::placeholder {
   color: #6b7280;
 }
