@@ -15,8 +15,20 @@ export default function Main() {
     }));
   }
 
+  /**
+   * Fetching data in React Challenge:
+   * Instead of console logging the data, save it in state
+   * and display it to the page. (Just replace the hard-coded
+   * object inside the `<pre>` element with the data)
+   */
+
+  fetch("https://swapi.py4e.com/api/people/1")
+    .then((res) => res.json())
+    .then((data) => console.log(data));
+
   return (
     <main>
+      <pre>{JSON.stringify({ name: "Luke" }, null, 2)}</pre>
       <div className="form">
         <label>
           Top Text
