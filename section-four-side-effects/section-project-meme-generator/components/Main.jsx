@@ -8,27 +8,11 @@ export default function Main() {
   });
 
   function handleChange(event) {
-    /**
-     * Controlled Components Challenge - part 1 : update the topText value in the meme state
-     * object every time the topText input box is changed
-     *
-     * Note: don't worry about bottomText at this point.
-     */
-    setMeme((prevObj) => {
-      const { value } = event.target;
-      const { name } = event.target;
-      if (name === "topText") {
-        return {
-          ...prevObj,
-          topText: value,
-        };
-      } else if (name === "bottomText") {
-        return {
-          ...prevObj,
-          bottomText: value,
-        };
-      }
-    });
+    const { value, name } = event.currentTarget;
+    setMeme((prevObj) => ({
+      ...prevObj,
+      [name]: value,
+    }));
   }
 
   return (
@@ -41,6 +25,7 @@ export default function Main() {
             placeholder={meme.topText}
             name="topText"
             onChange={handleChange}
+            value={meme.topText}
           />
         </label>
 
@@ -51,6 +36,7 @@ export default function Main() {
             placeholder={meme.bottomText}
             name="bottomText"
             onChange={handleChange}
+            value={meme.bottomText}
           />
         </label>
         <button>Get a new meme image 🖼</button>
