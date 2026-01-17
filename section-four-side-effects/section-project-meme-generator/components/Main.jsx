@@ -15,15 +15,17 @@ export default function Main() {
      * Note: don't worry about bottomText at this point.
      */
     setMeme((prevObj) => {
-      if (event.target.name === "topText") {
+      const { value } = event.target;
+      const { name } = event.target;
+      if (name === "topText") {
         return {
           ...prevObj,
-          topText: event.target.value,
+          topText: value,
         };
-      } else if (event.target.name === "bottomText") {
+      } else if (name === "bottomText") {
         return {
           ...prevObj,
-          bottomText: event.target.value,
+          bottomText: value,
         };
       }
     });
