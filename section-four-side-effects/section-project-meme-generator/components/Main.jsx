@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 export default function Main() {
   const [meme, setMeme] = React.useState({
@@ -6,6 +6,31 @@ export default function Main() {
     bottomText: "Walk into Mordor",
     imageUrl: "http://i.imgflip.com/1bij.jpg",
   });
+
+  /**
+   * Meme Generator - Fetch Memes Challenge:
+   * Get an array of memes from the imgflip API as soon as
+   * this component renders for the first time.
+   * Check the imgflip documentation for the correct URL.
+   * Save the array of memes (not the whole response
+   * data) to state. (For this app, we'll randomly choose
+   * one of the memes from this array when the user clicks
+   * the "Get a new meme image" button, but we'll do that in
+   * a separate challenge.)
+   *
+   * Hint: for now, don't try to use an async/await function.
+   * Instead, use `.then()` to resolve the promises
+   * from using `fetch`. We'll learn why after this challenge.
+   */
+
+  const [memeArray, setMemeArray] = React.useState([]);
+
+  React.useEffect(() => {
+    console.log("fetching memes array");
+    fetch(`https://api.imgflip.com/get_memes`)
+      .then((res) => res.json())
+      .then((data) => setMemeArray(data.data.memes));
+  }, []);
 
   function handleChange(event) {
     const { value, name } = event.currentTarget;
@@ -15,35 +40,15 @@ export default function Main() {
     }));
   }
 
-  /**
-   * Fetching data in React Challenge:
-   * Instead of console logging the data, save it in state
-   * and display it to the page. (Just replace the hard-coded
-   * object inside the `<pre>` element with the data)
-   */
-
-  const [starwarChar, setStarwarChar] = useState({});
-
-  React.useEffect(() => {
-    async function fetchData() {
-      try {
-        const response = await fetch("https://swapi.py4e.com/api/people/1");
-        const data = await response.json();
-        console.log(data);
-        console.log(Object.prototype.toString.call(data));
-        console.log(typeof data);
-        setStarwarChar(data);
-      } catch (error) {
-        console.error("error:-", error);
-      }
-    }
-    fetchData();
-  }, []);
+  function changeUrl() {
+    setMeme((prevObj) => ({
+      ...prevObj,
+      imageUrl: memeArray[Math.floor(Math.random() * 100)].url,
+    }));
+  }
 
   return (
     <main>
-      <pre>{JSON.stringify({ name: "Luke" }, null, 2)}</pre>
-      <pre>{JSON.stringify(starwarChar, null, 2)}</pre>
       <div className="form">
         <label>
           Top Text
@@ -66,7 +71,7 @@ export default function Main() {
             value={meme.bottomText}
           />
         </label>
-        <button>Get a new meme image 🖼</button>
+        <button onClick={changeUrl}>Get a new meme image 🖼</button>
       </div>
       <div className="meme">
         <img src={meme.imageUrl} />
