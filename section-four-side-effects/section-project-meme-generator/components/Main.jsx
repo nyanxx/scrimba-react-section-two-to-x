@@ -43,7 +43,7 @@ export default function Main() {
   function changeUrl() {
     setMeme((prevObj) => ({
       ...prevObj,
-      imageUrl: memeArray[Math.floor(Math.random() * 100)].url,
+      imageUrl: memeArray[Math.floor(Math.random() * memeArray.length)].url,
     }));
   }
 
