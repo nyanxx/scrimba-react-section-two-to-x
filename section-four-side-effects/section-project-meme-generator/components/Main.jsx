@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default function Main() {
   const [meme, setMeme] = React.useState({
@@ -22,13 +22,28 @@ export default function Main() {
    * object inside the `<pre>` element with the data)
    */
 
-  fetch("https://swapi.py4e.com/api/people/1")
-    .then((res) => res.json())
-    .then((data) => console.log(data));
+  const [starwarChar, setStarwarChar] = useState({});
+
+  React.useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await fetch("https://swapi.py4e.com/api/people/1");
+        const data = await response.json();
+        console.log(data);
+        console.log(Object.prototype.toString.call(data));
+        console.log(typeof data);
+        setStarwarChar(data);
+      } catch (error) {
+        console.error("error:-", error);
+      }
+    }
+    fetchData();
+  }, []);
 
   return (
     <main>
       <pre>{JSON.stringify({ name: "Luke" }, null, 2)}</pre>
+      <pre>{JSON.stringify(starwarChar, null, 2)}</pre>
       <div className="form">
         <label>
           Top Text
