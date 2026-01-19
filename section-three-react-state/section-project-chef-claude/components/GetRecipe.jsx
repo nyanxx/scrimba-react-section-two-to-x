@@ -11,14 +11,6 @@ export default function GetRecipe(props) {
 
   const getRecipeRef = useRef(null);
 
-  /**
-   * Challenge:
-   * Add a new effect that calls `recipeSection.current.scrollIntoView()`
-   * only if recipe is not an empty string and recipeSection.current is not null.
-   * Think carefully about what value(s) you would want to include in
-   * the dependencies array.
-   */
-
   useEffect(() => {
     recipe &&
       getRecipeRef.current &&
@@ -40,11 +32,6 @@ export default function GetRecipe(props) {
         </button>
       </section>
       {recipe && <ClaudeRecipe recipe={recipe} />}
-      {/* {recipe &&
-        getRecipeRef.current.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        })} */}
     </>
   );
 }
