@@ -4,12 +4,7 @@ import GetRecipe from "./GetRecipe";
 import { getRecipeFromMistral } from "../ai";
 
 export default function Main() {
-  const [ingredients, setIngredients] = useState([
-    "chicken",
-    "chickdden",
-    "chdicken",
-    "chickend",
-  ]);
+  const [ingredients, setIngredients] = useState([]);
 
   function addIngredient(formData) {
     formData.get("ingredient") !== ""

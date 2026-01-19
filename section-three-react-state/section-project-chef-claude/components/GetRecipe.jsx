@@ -1,5 +1,5 @@
 import ClaudeRecipe from "./ClaudeRecipe";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function GetRecipe(props) {
   const [recipe, setRecipe] = useState();
@@ -11,13 +11,22 @@ export default function GetRecipe(props) {
 
   const getRecipeRef = useRef(null);
 
-  // useEffect(() => {
-  //   recipe &&
-  //     getRecipeRef.current.scrollIntoView({
-  //       behavior: "smooth",
-  //       block: "start",
-  //     });
-  // }, [recipe]);
+  /**
+   * Challenge:
+   * Add a new effect that calls `recipeSection.current.scrollIntoView()`
+   * only if recipe is not an empty string and recipeSection.current is not null.
+   * Think carefully about what value(s) you would want to include in
+   * the dependencies array.
+   */
+
+  useEffect(() => {
+    recipe &&
+      getRecipeRef.current &&
+      getRecipeRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+  }, [recipe]);
 
   return (
     <>
@@ -31,11 +40,11 @@ export default function GetRecipe(props) {
         </button>
       </section>
       {recipe && <ClaudeRecipe recipe={recipe} />}
-      {recipe &&
+      {/* {recipe &&
         getRecipeRef.current.scrollIntoView({
           behavior: "smooth",
           block: "start",
-        })}
+        })} */}
     </>
   );
 }
