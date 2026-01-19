@@ -1,17 +1,28 @@
 import ClaudeRecipe from "./ClaudeRecipe";
-import { useState } from "react";
+import { useRef, useState } from "react";
+
 export default function GetRecipe(props) {
-  const [recipe, setRecipe] = useState("");
+  const [recipe, setRecipe] = useState();
 
   async function handleClick() {
     const data = await props.getRecipeFromMistral(props.ingredients);
     setRecipe(data);
   }
 
+  const getRecipeRef = useRef(null);
+
+  // useEffect(() => {
+  //   recipe &&
+  //     getRecipeRef.current.scrollIntoView({
+  //       behavior: "smooth",
+  //       block: "start",
+  //     });
+  // }, [recipe]);
+
   return (
     <>
       <section className="get-recipe">
-        <div>
+        <div ref={getRecipeRef}>
           <h3>Ready for a recipe?</h3>
           <p>Generate a recipe from your list of ingredients</p>
         </div>
@@ -20,6 +31,11 @@ export default function GetRecipe(props) {
         </button>
       </section>
       {recipe && <ClaudeRecipe recipe={recipe} />}
+      {recipe &&
+        getRecipeRef.current.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        })}
     </>
   );
 }

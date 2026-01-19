@@ -48,6 +48,7 @@ export async function getRecipeFromMistral(ingredientsArr) {
     return response.choices[0].message.content;
   } catch (err) {
     console.error(err.message);
-    return "Sorry, I couldn't generate a recipe.";
+    console.log("Sorry, I couldn't generate a recipe.");
+    return null;
   }
 }
